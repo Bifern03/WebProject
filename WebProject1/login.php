@@ -10,7 +10,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->execute(['username' => $username]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if ($user && password_verify($password, $user['password'])) {
+    // แก้ไขให้เปรียบเทียบรหัสผ่านแบบตรง ๆ โดยไม่ใช้ password_verify
+    if ($user && $password === $user['password']) {
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['role'] = $user['role'];
         header('Location: dashboard.php');

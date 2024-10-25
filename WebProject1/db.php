@@ -2,7 +2,7 @@
 $host = 'localhost';
 $db = 'equipment_rental';
 $user = 'root'; // ชื่อผู้ใช้ฐานข้อมูล
-$pass = '12345678'; // รหัสผ่าน (ถ้ามี)
+$pass = 'root'; // รหัสผ่าน (ถ้ามี)
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $pass);
